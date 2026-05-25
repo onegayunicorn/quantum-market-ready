@@ -1,0 +1,26 @@
+module.exports = {
+  expo: {
+    name: 'quantum-market-ready',
+    slug: 'quantum-market-ready',
+    version: '1.0.0',
+    orientation: 'portrait',
+    icon: './assets/icon.png',
+    userInterfaceStyle: 'dark',
+    platforms: ['ios', 'android'],
+    splash: {
+      image: './assets/splash.png',
+      resizeMode: 'contain',
+      backgroundColor: '#0f0a1e',
+    },
+    assetBundlePatterns: ['**/*'],
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: 'com.sovereigncore.quantummarket',
+    },
+    android: {
+      adaptiveIcon: { foregroundImage: './assets/adaptive-icon.png', backgroundColor: '#0f0a1e' },
+      package: 'com.sovereigncore.quantummarket',
+    },
+    extra: { eas: { projectId: 'sovereign-core-quantum' } },
+  },
+};
