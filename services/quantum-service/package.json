@@ -1,0 +1,9 @@
+{
+  "name": "quantum-service",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "python -m src.main",
+    "dev": "uvicorn src.main:app --reload"
+  },
+  "requirements": ["numpy>=1.24.0", "fastapi>=0.104.0", "uvicorn>=0.24.0"]
+}
