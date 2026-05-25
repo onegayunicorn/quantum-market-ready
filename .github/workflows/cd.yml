@@ -1,0 +1,27 @@
+name: Deploy Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Build Docker images
+        run: |
+          docker-compose -f docker/docker-compose.prod.yml build
+      
+      - name: Push to registry
+        run: |
+          docker-compose -f docker/docker-compose.prod.yml push
+      
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f infrastructure/kubernetes/overlays/prod/
+      
+      - name: Verify deployment
+        run: |
+          curl -f https://api.sovereigncore.research/health
