@@ -1,0 +1,26 @@
+{
+  "name": "@quantum/cli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quantum Market CLI Tool",
+  "main": "dist/index.js",
+  "bin": { "quantum": "./dist/index.js" },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node dist/index.js",
+    "lint": "eslint src --ext ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@quantum/api-client": "workspace:*",
+    "@quantum/types": "workspace:*",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.0",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}
