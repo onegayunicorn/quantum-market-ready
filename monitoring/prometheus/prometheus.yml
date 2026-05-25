@@ -1,0 +1,23 @@
+monitoring:
+  prometheus:
+    scrape_interval: 15s
+    evaluation_interval: 15s
+    targets:
+      - api-gateway:8080
+      - auth-service:8082
+      - websocket-service:8081
+
+  grafana:
+    admin_user: admin
+    admin_password: quantum123
+
+  alertmanager:
+    smtp:
+      from: alerts@sovereigncore.research
+      to: team@sovereigncore.research
+
+quantum:
+  coherence_threshold: 0.9999
+  purity_threshold: 0.999
+  max_qubits: 128
+  simulation_mode: hybrid
